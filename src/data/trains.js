@@ -6,7 +6,7 @@ const trains = [
     number: "064К",
     route: { from: "Львів", to: "Харків" },
     departure: "2026-05-10T04:30:00",
-    arrival: "2026-05-11T12:15:00",
+    arrival: "2026-05-10T12:15:00",
     durationMinutes: 465,
     wagons: [
       { number: 1, type: "Люкс", capacity: 18, price: 900, bookedSeats: [] },
