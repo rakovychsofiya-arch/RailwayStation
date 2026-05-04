@@ -6,3 +6,4 @@ const TrainCard=({train})=>{
         return `${h} г  ${m} хв `
     }
 };
+const minPrice = Math.min(...train.wagons.map(w => w.price));
