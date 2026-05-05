@@ -9,7 +9,7 @@ const minPrice = Math.min(...train.wagons.map(w => w.price));
 return (
     <div className="train-card">
       <div className="train-header">
-        <span className="train-number">{train.number}</span>
+        <span className="train-number">{train.number}     </span>
         <span className="train-type">{train.train_type}</span>
       </div>
       
@@ -26,8 +26,8 @@ return (
       </div>
 
       <div className="train-footer">
-        <span className="price">від {minPrice} ₴</span>
-        <button className="select-btn">Вибрати</button>
+        <span className="price">Ціни від: {minPrice} ₴</span><br></br>
+        <button className="select-btn"><strong>Вибрати</strong></button>
       </div>
     </div>
   );

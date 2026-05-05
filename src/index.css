@@ -20,6 +20,8 @@ h1, h2 {
 
 /* Глобальні налаштування для кнопок (якщо будуть) */
 button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(56, 8, 100);
   cursor: pointer;
   border: none;
   transition: background 0.3s ease;
