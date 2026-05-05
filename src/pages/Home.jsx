@@ -5,10 +5,12 @@ const Home = () => {
     //Розділяємо на різні стани (куди та звідки)
     const [fromQuery, setFromQuery] = useState('');
     const [toQuery, setToQuery] = useState('');
+    const [numberQuery, setNumberQuery] = useState('');
     const filteredTrains = trainsData.filter(train => {
     const matchesFrom = train.route.from.toLowerCase().includes(fromQuery.toLowerCase());
     const matchesTo = train.route.to.toLowerCase().includes(toQuery.toLowerCase());
-    return matchesFrom && matchesTo;
+    const matchesNumber = train.number.toLowerCase().includes(numberQuery.toLowerCase());
+    return matchesFrom && matchesTo && matchesNumber;
     });
     return (
          <div className="home-page">
@@ -28,6 +30,13 @@ const Home = () => {
                  value={toQuery}
                  onChange={(e) => setToQuery(e.target.value)}
                  className="search-input"
+                 />
+                 <input 
+                 type="text" 
+                 placeholder="№ Потяга (напр. 064К)" 
+                 value={numberQuery}
+                 onChange={(e) => setNumberQuery(e.target.value)}
+                 className="search-input number-input"
                  />
              </div>  
              <TrainList trains={filteredTrains} />
