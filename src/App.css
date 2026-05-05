@@ -1,5 +1,5 @@
 .home-page {
-  padding: 20px;
+  padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -7,6 +7,7 @@
 
 .search-container {
   display: flex;
+  flex-direction: column;
   gap: 15px;
   margin-bottom: 30px;
   background: #f4f4f4;
@@ -23,7 +24,7 @@
 
 .train-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -54,24 +55,22 @@
   
 }
 /* Планшетна версія */
-@media (max-width: 768px) {
-  .search-container {
-    flex-direction: column; /* Інпути стають один під одним */
-  }
-  
-  .train-list {
-    grid-template-columns: 1fr; /* Картки на всю ширину */
-  }
-}
-
-/* Мобільна версія */
-@media (max-width: 480px) {
+@media (min-width: 768px) {
   .home-page {
-    padding: 10px;
+    padding: 20px;
   }
-  
+
   h1 {
-    font-size: 1.5rem;
-    text-align: center;
+    text-align: left; /* На ПК зазвичай вирівнюють по лівому краю */
+    font-size: 2rem;
+  }
+
+  .search-container {
+    flex-direction: row; /* На великих екранах інпути в ряд */
+  }
+
+  .train-list {
+    /* Повертаємо сітку: 300px або більше, скільки влізе в ряд */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
